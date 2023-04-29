@@ -23,7 +23,9 @@ class DELTAGAME_API ISpawnnManagerInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	
-	virtual ACharacter* SpawnCharacter(const FVector& SpawnLocation) { return nullptr; };
-	virtual FVector CalculateSpawnPoint() { return FVector::ZeroVector; };
-
+	virtual ACharacter* SpawnCharacter(const FVector& SpawnLocation) = 0;
+	virtual FVector CalculateSpawnPoint() = 0;
+	virtual TArray<ACharacter*>	GetActorsPool() = 0;
+	virtual void SpawnWave() = 0;
+	virtual int32 GetPoolSize() const = 0;
 };
